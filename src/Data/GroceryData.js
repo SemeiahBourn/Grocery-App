@@ -2,28 +2,28 @@ const groceries = [
     {
         "Item": 'Wipes',
         "Brand": 'Clorox',
-        "Units": '1',
+        "Price": '6.99',
         "Quantity": 0,
         "isPurchased": true
       },
       {
         "Item": 'Shoes',
         "Brand": 'Nike',
-        "Units": '2',
+        "Price": '56.99',
         "Quantity": 0,
         "isPurchased": false
       },
       {
         "Item": 'Lotion',
         "Brand": 'Jergens',
-        "Units": '1',
+        "Price": '3.49',
         "Quantity": 0,
         "isPurchased": true
       },
       {
         "Item": 'Chips',
         "Brand": 'Doritos',
-        "Units": '4',
+        "Price": '1.99',
         "Quantity": 0,
         "isPurchased": false
       },

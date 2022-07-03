@@ -12,7 +12,7 @@ class App extends Component {
     shoppingCartItems: [],
     groceryItem: '',
     groceryBrand: '',
-    groceryUnits: '',
+    groceryPrice: '',
     groceryQuantity: 0
   }
 
@@ -25,7 +25,7 @@ class App extends Component {
     const newItem = {
       Item: this.state.groceryItem,
       Brand: this.state.groceryBrand,
-      Units: this.state.groceryUnits
+      Price: this.state.groceryPrice
       
     }
     console.log(newItem);
@@ -34,7 +34,7 @@ class App extends Component {
       
       groceryItem: '',
       groceryBrand: '',
-      groceryUnits: '',
+      groceryPrice: '',
       groceryQuantity: 0
     });
   };
@@ -54,7 +54,7 @@ addToCart=(groceries)=>{
           handleChange={this.handleChange}
           groceryItem={this.groceryItem}
           groceryBrand={this.groceryBrand}
-          groceryUnits={this.groceryUnits}
+          groceryPrice={this.groceryPrice}
           groceryQuanitity={this.groceryQuanitity}
         />
         <GroceryList groceries={this.state.GroceryData} addToCart={this.addToCart}/>

@@ -17,12 +17,12 @@ const Form = (props) => {
         id="groceryBrand"
       />
       <br />
-      <label htmlFor="groceryUnits"> Item's Unit </label>
+      <label htmlFor="groceryPrice"> Item's Price </label>
       <input
         type="text"
-        value={props.groceryUnits}
+        value={props.groceryPrice}
         onChange={props.handleChange}
-        id="groceryUnits"
+        id="groceryPrice"
       />
       <br />
       <label htmlFor="groceryQuanity"> Item Quantity </label>
