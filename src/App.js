@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Component } from "react";
+import GroceryData from "./Data/GroceryData";
+import Form from "./comonents/Form";
+import GroceryList from "./comonents/GroceryList";
+import ShoppingCart from "./comonents/ShoppingCart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    GroceryData: GroceryData,
+    shoppingCartItems: [],
+    groceryItem: '',
+    groceryBrand: '',
+    groceryUnits: '',
+    groceryQuantity: 0
+  }
+
+  handleChange = (event) => {
+    this.setState({[event.target.id]: event.target.value })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newItem = {
+      Item: this.state.groceryItem,
+      Brand: this.state.groceryBrand,
+      Units: this.state.groceryUnits
+      
+    }
+    console.log(newItem);
+    this.setState({
+      GroceryData: [newItem, ...this.state.GroceryData],
+      
+      groceryItem: '',
+      groceryBrand: '',
+      groceryUnits: '',
+      groceryQuantity: 0
+    });
+  };
+addToCart=(groceries)=>{
+  console.log(groceries)
+  this.setState({shoppingCartItems: [groceries,...this.state.shoppingCartItems] })
+}
+
+
+  render() {
+    console.log(this.state)
+    return (
+      <div className="App">
+        <ShoppingCart shoppingCartItems={this.state.shoppingCartItems}/>
+        <Form
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          groceryItem={this.groceryItem}
+          groceryBrand={this.groceryBrand}
+          groceryUnits={this.groceryUnits}
+          groceryQuanitity={this.groceryQuanitity}
+        />
+        <GroceryList groceries={this.state.GroceryData} addToCart={this.addToCart}/>
+      </div>
+    );
+  }
 }
 
 export default App;
