@@ -25,7 +25,8 @@ class App extends Component {
     const newItem = {
       Item: this.state.groceryItem,
       Brand: this.state.groceryBrand,
-      Price: this.state.groceryPrice
+      Price: this.state.groceryPrice,
+      Quantity: this.state.groceryQuantity
       
     }
     console.log(newItem);
@@ -37,6 +38,7 @@ class App extends Component {
       groceryPrice: '',
       groceryQuantity: 0
     });
+    event.target.reset()
   };
 addToCart=(groceries)=>{
   console.log(groceries)
@@ -55,7 +57,7 @@ addToCart=(groceries)=>{
           groceryItem={this.groceryItem}
           groceryBrand={this.groceryBrand}
           groceryPrice={this.groceryPrice}
-          groceryQuanitity={this.groceryQuanitity}
+          groceryQuantity={this.groceryQuantity}
         />
         <GroceryList groceries={this.state.GroceryData} addToCart={this.addToCart}/>
       </div>

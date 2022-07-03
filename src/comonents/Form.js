@@ -25,12 +25,12 @@ const Form = (props) => {
         id="groceryPrice"
       />
       <br />
-      <label htmlFor="groceryQuanity"> Item Quantity </label>
+      <label htmlFor="groceryQuantity"> Item Quantity </label>
       <input
         type="number"
         value={props.groceryQuantity}
         onChange={props.handleChange}
-        id="groceryQuanity"
+        id="groceryQuantity"
       />
       <input type="submit" />
     </form>
